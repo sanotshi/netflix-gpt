@@ -2,8 +2,11 @@
 -create react app(npx create-react-app netflix-gpt)
 -configured tailwindcss into our app
 -Header
+Routing of App
 -Login form
 -Signup form
+-Form validation
+-useRef hook
 
 #Features
 -Browse
