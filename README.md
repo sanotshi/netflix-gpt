@@ -12,6 +12,7 @@ Routing of App
 -create signup user account
 -implement sign in user API
 -created Redux store with userSlice
+-Implementing sign out
 
 #Features
 -Browse

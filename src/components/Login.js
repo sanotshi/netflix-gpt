@@ -4,11 +4,13 @@ import { useState, useRef } from "react";
 import { checkValidData } from "../utilities/validate";
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utilities/firebase";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate=useNavigate();
 
   const email = useRef(null);
   const password = useRef(null);
@@ -36,6 +38,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
+          navigate("/browser")           //when you are sign up go to browser page
           console.log(user);
         })
         .catch((error) => {
@@ -52,6 +55,7 @@ const Login = () => {
        )
          .then((userCredential) => {
            const user = userCredential.user;
+           navigate("/browser")     //when user will sign in then go to browser page
            console.log(user);
          })
          .catch((error) => {
@@ -69,16 +73,16 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
+        <img className="h-full"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/cf244808-d722-428f-80a9-052acdf158ec/IN-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="bg-img"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute bg-black w-3/12 p-12 my-36 mx-auto left-0 right-0 bg-opacity-80 rounded-lg"
+        className="absolute bg-black w-3/12  p-10 my-36 mx-auto left-0 right-0 bg-opacity-80 rounded-lg"
       >
-        <h1 className="text-white font-bold text-3xl py-4">
+        <h1 className="text-white font-bold text-3xl  py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (
