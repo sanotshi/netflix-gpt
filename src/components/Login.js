@@ -7,10 +7,11 @@ import { auth } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
 
 
+
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate=useNavigate();
+const navigate=useNavigate()
 
   const email = useRef(null);
   const password = useRef(null);
@@ -38,8 +39,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browser")           //when you are sign up go to browser page
-          console.log(user);
+         
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -55,7 +55,7 @@ const Login = () => {
        )
          .then((userCredential) => {
            const user = userCredential.user;
-           navigate("/browser")     //when user will sign in then go to browser page
+            //when user will sign in then go to browser page
            console.log(user);
          })
          .catch((error) => {
