@@ -13,6 +13,22 @@ Routing of App
 -implement sign in user API
 -created Redux store with userSlice
 -Implementing sign out
+-If the user is not logged redirect /browse to login page and vice-versa
+-unsubscribe to the onAuthStateChanged callback
+-Add hardcoded values to constants
+<!-- -language=en-US& -->
+-register TMDB api and create an app & get access token
+-Get data from TMDB now playing movies list api
+-create own custom hook for nowPlayingMovies
+-building browser page
+-building title page
+-create movieSlice
+-update store with movie data
+-planning for mainContainer &secondaryContainer
+-fetch data trailer video
+-update store with trailer video data
+-embedded the youtube video and make it auto play and mute
+-tailwindcss classes to make mainContainer look awesome
 
 #Features
 -Browse
