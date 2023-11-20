@@ -29,6 +29,11 @@ Routing of App
 -update store with trailer video data
 -embedded the youtube video and make it auto play and mute
 -tailwindcss classes to make mainContainer look awesome
+-build secondary Component
+-build movie list && movie card
+-TMDB img CDN URL
+-made the browser page amazing with tailwindcss
+-usePopularMovies,useUpComingMovies,useTopRatedMovies custom hooks
 
 #Features
 -Browse
