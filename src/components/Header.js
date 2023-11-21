@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utilities/userSlice";
 import { LOGO, USERICON } from "../utilities/constants";
+import { toggleGptSearchView } from "../utilities/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Header = () => {
       });
   };
   useEffect(() => {
-    const unsubscribe=onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user; //when user will Sign in/Sign up this will call
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
@@ -32,17 +33,16 @@ const Header = () => {
         navigate("/");
       }
     });
-    return ()=> unsubscribe();
+    return () => unsubscribe();
   }, []);
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  };
 
   return (
     <div className="absolute bg-gradient-to-b from-black z-10 w-screen flex justify-between">
       <div className="flex  ">
-        <img
-          className="w-44 m-2"
-          src={LOGO}
-          alt="logo"
-        />
+        <img className="w-44 m-2" src={LOGO} alt="logo" />
         {user && (
           <ul className="flex text-white list-none p-8 cursor-pointer ">
             <li className="px-2 text-lg">Home</li>
@@ -54,6 +54,12 @@ const Header = () => {
       </div>
       {user && (
         <div className="flex p-4   ">
+          <button
+            className=" bg-blue-400 text-white px-2 m-2 rounded-lg "
+            onClick={handleGptSearchClick}
+          >
+            GPT Search
+          </button>
           <img
             className="p-2 w-14 h-14 cursor-pointer"
             src={USERICON}
@@ -61,7 +67,7 @@ const Header = () => {
           />
           <button
             onClick={handleSignOut}
-            className="text-white border  px-2  bg-red-500 rounded-md m-2"
+            className="text-white px-3  bg-red-500 rounded-md m-2"
           >
             SignOut
           </button>

@@ -5,6 +5,7 @@ import { checkValidData } from "../utilities/validate";
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
+import { BG_URL } from "../utilities/constants";
 
 
 
@@ -74,7 +75,7 @@ const navigate=useNavigate()
       <Header />
       <div className="absolute">
         <img className="h-full"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/cf244808-d722-428f-80a9-052acdf158ec/IN-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BG_URL}
           alt="bg-img"
         />
       </div>
