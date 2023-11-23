@@ -5,6 +5,9 @@ name:"movies",
 initialState:{
     nowPlayingMovies:null,
     trailerVideo:null,
+    popularMovies:null,
+    upComingMovies:null,
+    topRatedMovies:null,
 },
 reducers:{
     addNowPlayingMovies:(state,action)=>{
