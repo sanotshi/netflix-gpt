@@ -34,6 +34,10 @@ Routing of App
 -TMDB img CDN URL
 -made the browser page amazing with tailwindcss
 -usePopularMovies,useUpComingMovies,useTopRatedMovies custom hooks
+-GPT search page
+-GPT search bar
+-multi language feature in our app
+-Building our app mobile responsive
 
 #Features
 -Browse

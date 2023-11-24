@@ -47,23 +47,25 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute bg-gradient-to-b from-black z-10 w-screen flex justify-between">
-      <div className="flex  ">
-        <img className="w-44 m-2" src={LOGO} alt="logo" />
+    <div className="absolute bg-gradient-to-b from-black z-10 w-screen flex flex-col md:flex-row justify-between">
+      <div className="flex ">
+        <img className="w-28 md:w-44  m-2 mx-auto md:mx-0" src={LOGO} alt="logo" />
         {user && (
-          <ul className="flex text-white list-none p-8 cursor-pointer ">
-            <li className="px-2 text-lg">Home</li>
-            <li className="px-2 text-lg">Tv Shows</li>
-            <li className="px-2 text-lg">Movies</li>
-            <li className="px-2 text-lg">New & Popular</li>
+          <div>
+          <ul className="flex text-white list-none p-4 md:p-8 cursor-pointer hidden md:inline-flex ">
+            <li className="px-0 md:px-2 text-md md:text-lg">Home</li>
+            <li className="px-0 md:px-2 text-md md:text-lg">Tv Shows</li>
+            <li className="px-0 md:px-2 text:md md:text-lg">Movies</li>
+            <li className="px-0 md:px-2 text-md md:text-lg">New & Popular</li>
           </ul>
+          </div>
         )}
       </div>
       {user && (
        
-        <div className="flex p-4   ">
+        <div className="flex p-1 md:p-4 justify-between  ">
 
-         { showGptSearch && <select className="px-2 m-2 bg-slate-600 text-white" onChange={handleLanguageChange}>
+         { showGptSearch && <select className="px-1 md:px-2 m-1 md:m-2 bg-slate-600 text-white" onChange={handleLanguageChange}>
            {SUPPORTED_LANGUAGES.map(lang=> 
              <option value={lang.identifier} key={lang.identifier} >
               {lang.name}

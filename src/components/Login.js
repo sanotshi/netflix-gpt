@@ -24,7 +24,6 @@ const navigate=useNavigate()
     const message = checkValidData(
       email.current.value,
       password.current.value,
-    //   name.current.value
     );
      setErrorMessage(message);
     
@@ -74,16 +73,16 @@ const navigate=useNavigate()
     <div>
       <Header />
       <div className="absolute">
-        <img className="h-full"
+        <img className="h-screen object-cover md:h-full"
           src={BG_URL}
           alt="bg-img"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute bg-black w-3/12  p-10 my-36 mx-auto left-0 right-0 bg-opacity-80 rounded-lg"
+        className="absolute bg-black w-auto md:w-3/12  md:mt-[10%]  md:h-100 p-8 md:p-10 m-16 md:my-36 mx-auto left-0 right-0 bg-opacity-80 rounded-lg"
       >
-        <h1 className="text-white font-bold text-3xl  py-4">
+        <h1 className="text-white font-bold text-xl md:text-3xl py-0 md:py-2">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (
@@ -91,7 +90,7 @@ const navigate=useNavigate()
             ref={name}
             type="text"
             placeholder="Full Name"
-            className="p-4 my-4 w-full bg-zinc-800 text-zinc-400 cursor-pointer"
+            className="p-4 my-4  md:w-full bg-zinc-800 text-zinc-400 cursor-pointer"
           />
         )}
         <input
