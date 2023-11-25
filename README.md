@@ -37,6 +37,12 @@ Routing of App
 -GPT search page
 -GPT search bar
 -multi language feature in our app
+-Get openai API key
+-GptSearch api calls
+-fetching GptMovieSuggestions from TMDB
+-Create gptSlice added data
+-Reused movieList Component to male movieSuggestion container
+-Memoization
 -Building our app mobile responsive
 
 #Features

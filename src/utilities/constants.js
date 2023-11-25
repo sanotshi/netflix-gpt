@@ -27,5 +27,6 @@ export const SUPPORTED_LANGUAGES = [
   {identifier:"russian",name:"Russian"},
   {identifier:"tamil",name:"Tamil"},
 ];
-
-export const OPENAI_KEY="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";
+export const OPENAI_KEY="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";
+//  export const OPENAI_KEY="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";
+//  export const OPENAI_KEY=process.env.REACT_APP_OPENAI_KEY;
